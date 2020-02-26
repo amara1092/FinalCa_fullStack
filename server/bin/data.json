@@ -1,9 +1,8 @@
 {
-    "_id" : ObjectId("5e45a0d150b212aaa7b693e7"),
-    "title" : "Tshirt one title",
-    "updatedAt" : ISODate("2020-02-13T20:42:38.316Z")
+    "_id" : ObjectId("5e45a0d150b212aaa7b693ea"),
+    "title" : "Tshirt two title",
+    "updatedAt" : ISODate("2020-02-13T20:45:24.762Z")
 }
-
 
 {
     "_id" : ObjectId("5e45a0d150b212aaa7b693ea"),
