@@ -3,7 +3,7 @@ import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import {Link}             from '@reach/router';
 import * as Config        from '../config.json'
 
-class Cakes extends React.Component {
+class Tshirts extends React.Component {
 
   // #######################################################
   // # Local state
@@ -17,46 +17,46 @@ class Cakes extends React.Component {
 
   render() {
 
-    if (!this.state.cakes && this.state.cakesLoaded === true) {
+    if (!this.state.tshirts && this.state.tshirtsLoaded === true) {
       return (
-        <p>Error loading cakes. Try again later.</p>
+        <p>Error loading tshirts. Try again later.</p>
       );
-    } else if (!this.state.cakes) {
+    } else if (!this.state.tshirts) {
       return (
-        <p>Loading cakes...</p>
+        <p>Loading tshirts...</p>
       );
-    } else if (this.state.cakes.length === 0) {
+    } else if (this.state.tshirts.length === 0) {
       return (
-        <p>Sorry, no cakes are available</p>
+        <p>Sorry, no tshirts are available</p>
       );
     } else {
       return (
         <div>
-          <h1>All Cakes in the database</h1>
+          <h1>All Tshirts in the database</h1>
           <ul>
-            {this.state.cakes.map(cake => (
-              <li key={`cake_${cake._id}`}><Link to={`/cake/${cake._id}`}>{cake.title}</Link></li>
+            {this.state.tshirts.map(tshirt => (
+              <li key={`tshirt_${tshirt._id}`}><Link to={`/tshirt/${tshirt._id}`}>{tshirt.title}</Link></li>
             ))}
           </ul>
-          <p><Link to='/add-cake'>Add a new Cake</Link></p>
+          <p><Link to='/add-tshirt'>Add a new Tshirt</Link></p>
         </div>
       )
     }
   }
 
   componentDidMount() {
-    fetch(urlToCurrentDomain(Config.cakesAPI))
+    fetch(urlToCurrentDomain(Config.tshirtsAPI))
       .then (res  => res.json())
       .then (json => {
-        this.setState({cakes       : json});
-        this.setState({cakesLoaded : true});
+        this.setState({tshirts       : json});
+        this.setState({tshirtsLoaded : true});
       })
       .catch(err => {
-        this.setState({cakesLoaded: true});
+        this.setState({tshirtsLoaded: true});
       });
   }
 
 }
 
-export default Cakes;
+export default Tshirts;
 

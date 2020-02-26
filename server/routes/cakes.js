@@ -1,49 +1,49 @@
 const express  = require('express');
 const router   = express.Router();
 const mongoose = require('mongoose'); // using to generate ObjectIDs
-const Cake   = require('../models/Cake').Cake;
+const Tshirt   = require('../models/Tshirt').Tshirt;
 
 /**
  * Functionality for this route:
- *  C   POST    /Cakes/        Create a new Cake
- *  R   GET     /Cakes         Gets an array of all Cakes
- *  R   GET     /Cakes/:id     Get a single Cake, by ID
- *  U   PUT     /Cakes/:id     Update a single Cake, by id
- *  D   DELETE  /Cakes/:id     Delete a single Cake, by ID
+ *  C   POST    /Tshirts/        Create a new Tshirt
+ *  R   GET     /Tshirts         Gets an array of all Tshirts
+ *  R   GET     /Tshirts/:id     Get a single Tshirt, by ID
+ *  U   PUT     /Tshirts/:id     Update a single Tshirt, by id
+ *  D   DELETE  /Tshirts/:id     Delete a single Tshirt, by ID
  */
 
-// GET an array of all Cakes
+// GET an array of all Tshirts
 router.get('/', (req, res) => {
     return mongoose
-      .model('Cake')
+      .model('Tshirt')
       .find({})
-      .then (cakes => res.json(cakes))
+      .then (tshirts => res.json(tshirts))
       .catch(err => res
         .status(500)
         .json({ok: false})
       );
   });
 
-  // GET a single cake by ID
+  // GET a single tshirt by ID
 router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
   return mongoose
-    .model('Cake')
+    .model('Tshirt')
     .findOne({_id: req.params.id})
-    .then (cake => res.json(cake))
+    .then (tshirt => res.json(tshirt))
     .catch(err => res
       .status(500)
       .json({ok: false})
     );
 });
 
-// POST Create a new cake
+// POST Create a new tshirt
 router.post('/', (req, res) => {
-  return new Cake({
+  return new Tshirt({
     title     : req.body.title,
   })
   .save()
-  .then (cake => Cake.populate(cake, {path: '_id'}))
-  .then (cake => res.json(cake))
+  .then (tshirt => Tshirt.populate(tshirt, {path: '_id'}))
+  .then (tshirt => res.json(tshirt))
   .catch(err => res
     .status(400)
     .json({ok: false, error: err.message})
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 // DELETE Delete a topic with a given ID
 router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return Cake
+  return Tshirt
     .deleteOne({_id: req.params.id})
     .then (() => res.json({'ok': true}))
     .catch(err => res
@@ -61,9 +61,9 @@ router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
     );
 });
 
-// PUT Update a cake
+// PUT Update a tshirt
 router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return Cake
+  return Tshirt
     .findOneAndUpdate(
       {_id: req.params.id},
       {$set: {
@@ -71,8 +71,8 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       }},
       {new: true}
     )
-    .then (cake => Cake.populate(cake, {path: '_id'}))
-    .then (cake => res.json(cake))
+    .then (tshirt => Tshirt.populate(tshirt, {path: '_id'}))
+    .then (tshirt => res.json(tshirt))
     .catch(err => res
       .status(500)
       .json({ok: false})

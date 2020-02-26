@@ -3,7 +3,7 @@ import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class Cake extends React.Component {
+class Tshirt extends React.Component {
 
   // #######################################################
   // # Local state
@@ -17,40 +17,40 @@ class Cake extends React.Component {
 
   render() {
 
-    if (!this.state.cake && this.state.cakeLoaded === true) {
+    if (!this.state.tshirt && this.state.tshirtLoaded === true) {
       return (
-        <p>Error loading cakes. Try again later.</p>
+        <p>Error loading tshirts. Try again later.</p>
       );
-    } else if (!this.state.cake) {
+    } else if (!this.state.tshirt) {
       return (
-        <p>Loading cakes...</p>
+        <p>Loading tshirts...</p>
       );
-    } else if (this.state.cake.length === 0) {
+    } else if (this.state.tshirt.length === 0) {
       return (
-        <p>Sorry, no cakes are available</p>
+        <p>Sorry, no tshirts are available</p>
       );
     } else {
       return (
         <div>
-          <h1>{this.state.cake.title}</h1>
-          <Link to='/'>Back to All cakes</Link>
+          <h1>{this.state.tshirt.title}</h1>
+          <Link to='/'>Back to All tshirts</Link>
         </div>
       )
     }
   }
 
   componentDidMount() {
-    fetch(urlToCurrentDomain(`${Config.cakesAPI}/${this.props.cakeID}`))
+    fetch(urlToCurrentDomain(`${Config.tshirtsAPI}/${this.props.tshirtID}`))
       .then (res  => res.json())
       .then (json => {
-        this.setState({cake       : json});
-        this.setState({cakeLoaded : true});
+        this.setState({tshirt       : json});
+        this.setState({tshirtLoaded : true});
       })
       .catch(err => {
-        this.setState({cakeLoaded: true});
+        this.setState({tshirtLoaded: true});
       });
   }
 
 }
 
-export default Cake;
+export default Tshirt;
