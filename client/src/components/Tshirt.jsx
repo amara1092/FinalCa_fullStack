@@ -32,8 +32,14 @@ class Tshirt extends React.Component {
     } else {
       return (
         <div>
-          <h1>{this.state.tshirt.title}</h1>
-          <Link to='/'>Back to All tshirts</Link>
+          <h1>Brand:{this.state.tshirt.title}</h1>
+          <h1>Tshirt:{this.state.tshirt.tshirt}</h1>
+          <h1>Size:{this.state.tshirt.size}</h1>
+          <h1>Colour:{this.state.tshirt.colour}</h1>
+
+
+
+          <Link to='/'>Back to Menu </Link>
         </div>
       )
     }

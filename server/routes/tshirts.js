@@ -40,6 +40,9 @@ router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
 router.post('/', (req, res) => {
   return new Tshirt({
     title     : req.body.title,
+    size     : req.body.size,
+    colour     : req.body.colour,
+    tshirt    : req.body.tshirt,    
   })
   .save()
   .then (tshirt => Tshirt.populate(tshirt, {path: '_id'}))
@@ -68,6 +71,9 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       {_id: req.params.id},
       {$set: {
         title  : req.body.title,
+        size     : req.body.size,
+        colour     : req.body.colour,
+        tshirt    : req.body.tshirt,
       }},
       {new: true}
     )

@@ -1,45 +1,47 @@
 {
-    "_id" : ObjectId("5e45a0d150b212aaa7b693ea"),
-    "title" : "Tshirt two title",
-    "updatedAt" : ISODate("2020-02-13T20:45:24.762Z")
+    "_id" : ObjectId("5e56822c2d1461723061d449"),
+    "title" : "Adidas",
+    "Size" : "L,S",
+    "Colour" : "Black,Yellow",
+    "T-shirt" : "Tri Flag"
 }
 
 {
-    "_id" : ObjectId("5e45a0d150b212aaa7b693ea"),
-    "title" : "Tshirt two title",
-    "updatedAt" : ISODate("2020-02-13T20:45:24.762Z")
+    "_id" : ObjectId("5e56822c2d1461723061d44c"),
+    "title" : "Nike",
+    "Size" : "M,S",
+    "Colour" : "White",
+    "T-shirt" : "Tick"
 }
 
-
 {
-    "_id" : ObjectId("5e45a0d150b212aaa7b693ed"),
-    "title" : "Tshirt three title",
-    "updatedAt" : ISODate("2020-02-13T20:48:48.426Z")
+    "_id" : ObjectId("5e56822c2d1461723061d44f"),
+    "title" : "BooHoo",
+    "Size" : "XL,L,M,S",
+    "Colour" : "Black,green",
+    "T-shirt" : "Box Logo"
 }
 
-
 {
-    "_id" : ObjectId("5e45b1d2e6a7d43054d37413"),
-    "title" : "Tshirt four title",
-    "createdAt" : ISODate("2020-02-13T20:30:10.543Z"),
-    "updatedAt" : ISODate("2020-02-13T20:30:10.543Z"),
-    "__v" : 0
+    "_id" : ObjectId("5e56822c2d1461723061d452"),
+    "title" : "Nike",
+    "Size" : "XL,L,M,S",
+    "Colour" : "Black,White",
+    "T-shirt" : "Just do it"
 }
 
-
 {
-    "_id" : ObjectId("5e45b1e5c216ef3079d26e1e"),
-    "title" : "Tshirt five title",
-    "createdAt" : ISODate("2020-02-13T20:30:29.621Z"),
-    "updatedAt" : ISODate("2020-02-13T20:30:29.621Z"),
-    "__v" : 0
+    "_id" : ObjectId("5e56822c2d1461723061d455"),
+    "title" : "Boohoo",
+    "Size" : "XL,M,S",
+    "Colour" : "Orange",
+    "T-shirt" : "MAN"
 }
 
-
 {
-    "_id" : ObjectId("5e4bee1fcf61472c387d1d62"),
-    "title" : "Tshirt six title",
-    "createdAt" : ISODate("2020-02-18T14:01:03.375Z"),
-    "updatedAt" : ISODate("2020-02-18T14:01:03.375Z"),
-    "__v" : 0
+    "_id" : ObjectId("5e56822c2d1461723061d458"),
+    "title" : "Adidas",
+    "Size" : "XL",
+    "Colour" : "blue",
+    "T-shirt" : "Adidas Logo"
 }

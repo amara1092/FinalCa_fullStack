@@ -3,7 +3,7 @@ import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class AddTshirt extends React.Component {
+class Addtshirt extends React.Component {
 
   // #######################################################
   // # Local state
@@ -13,6 +13,17 @@ class AddTshirt extends React.Component {
     title     : ''
   }
 
+  state = {
+    size     : ''
+  }
+
+  state = {
+    colour     : ''
+  }
+
+  state = {
+    tshirt     : ''
+  }
   // #######################################################
   // # Render
   // #######################################################
@@ -39,8 +50,26 @@ class AddTshirt extends React.Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
 
             <div>
-              <label>tshirt Title:
-                <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} />
+              <label>tshirt title:
+                <input type='' value={this.state.title} onChange={this.handletitleUpdate.bind(this)} />
+              </label>
+            </div>
+
+            <div>
+              <label>tshirt size:
+                <input type='' value={this.state.size} onChange={this.handlesizeUpdate.bind(this)} />
+              </label>
+            </div>
+
+            <div>
+              <label>tshirt colour:
+                <input type='' value={this.state.colour} onChange={this.handlecolourUpdate.bind(this)} />
+              </label>
+            </div>
+
+            <div>
+              <label>tshirt tshirt:
+                <input type='' value={this.state.tshirt} onChange={this.handletshirtUpdate.bind(this)} />
               </label>
             </div>
 
@@ -51,7 +80,7 @@ class AddTshirt extends React.Component {
             </div> */}
 
             <div>
-              <input type='submit' value='Add Tshirt' />
+              <input type='submit' value='Add tshirt' />
             </div>
 
           </form>
@@ -61,8 +90,20 @@ class AddTshirt extends React.Component {
     }
   }
 
-  handleTitleUpdate(e) {
+  handletitleUpdate(e) {
     this.setState({title: e.target.value || null});
+  }
+
+  handlesizeUpdate(e) {
+    this.setState({size: e.target.value || null});
+  }
+
+  handlecolourUpdate(e) {
+    this.setState({colour: e.target.value || null});
+  }
+
+  handletshirtUpdate(e) {
+    this.setState({tshirt: e.target.value || null});
   }
 
   handleContentUpdate(e) {
@@ -83,6 +124,9 @@ class AddTshirt extends React.Component {
       body: JSON.stringify({
         authoredBy: this.state.authoredBy,
         title     : this.state.title,
+        colour    : this.state.colour,
+        size     : this.state.size,
+        tshirt     : this.state.tshirt,
         content   : this.state.content
       })}
     )
@@ -109,4 +153,4 @@ class AddTshirt extends React.Component {
 
 }
 
-export default AddTshirt;
+export default Addtshirt;
