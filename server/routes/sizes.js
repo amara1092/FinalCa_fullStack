@@ -39,10 +39,10 @@ router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
 // POST Create a new size
 router.post('/', (req, res) => {
   return new Size({
-    title     : req.body.title,
-    size     : req.body.size,
-    colour     : req.body.colour,
-    size    : req.body.size,    
+    measurement  : req.body.measurement,
+        size     : req.body.size,
+        chest     : req.body.chest,
+        back    : req.body.back,
   })
   .save()
   .then (size => Size.populate(size, {path: '_id'}))

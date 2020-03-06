@@ -41,7 +41,6 @@ class Size extends React.Component {
           <h1>Size:{this.state.size.size}</h1>
           <h1>Chest:{this.state.size.chest}</h1>
           <h1>Back:{this.state.size.back}</h1>
-          <h1><img src={this.state.size.image}></img></h1>
 
 
 
@@ -53,17 +52,17 @@ class Size extends React.Component {
   }
 
   componentDidMount() {
-    fetch(urlToCurrentDomain(`${Config.tshirtsAPI}/${this.props.tshirtID}`))
+    fetch(urlToCurrentDomain(`${Config.sizesAPI}/${this.props.sizeID}`))
       .then (res  => res.json())
       .then (json => {
-        this.setState({tshirt       : json});
-        this.setState({tshirtLoaded : true});
+        this.setState({size       : json});
+        this.setState({sizeLoaded : true});
       })
       .catch(err => {
-        this.setState({tshirtLoaded: true});
+        this.setState({sizeLoaded: true});
       });
   }
 
 }
 
-export default Tshirt;
+export default Size;
