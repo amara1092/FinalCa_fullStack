@@ -24,8 +24,8 @@ p {
           column-count: 3;
   -webkit-column-gap: 40px;
           column-gap: 40px;
-  -webkit-column-rule: 1px solid lightblue;
-          column-rule: 1px solid lightblue;
+  -webkit-column-rule: 1px solid white;
+          column-rule: 1px solid white;
   color: white;
 }
 
@@ -66,6 +66,14 @@ label {
 }
 
 /*Footer.scss*/
+.jumbotron {
+  color: white;
+}
+
+.p2 {
+  color: white;
+}
+
 .navbar ul {
   list-style-type: none;
   margin: 0;
@@ -87,7 +95,7 @@ label {
 }
 
 .navbar li a:hover, .navbar .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: white;
 }
 
 .navbar li.dropdown {
