@@ -45,32 +45,40 @@ class Addtshirt extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div class = "create">
           <h1>Add a tshirt</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
 
             <div>
-              <label>tshirt title:
+            <center>
+            <label>Tshirt title:
                 <input type='' value={this.state.title} onChange={this.handletitleUpdate.bind(this)} />
               </label>
+              </center>
             </div>
 
             <div>
-              <label>tshirt size:
+            <center>
+              <label>Tshirt size:
                 <input type='' value={this.state.size} onChange={this.handlesizeUpdate.bind(this)} />
               </label>
+              </center>
             </div>
 
             <div>
-              <label>tshirt colour:
+            <center>
+              <label>Tshirt colour:
                 <input type='' value={this.state.colour} onChange={this.handlecolourUpdate.bind(this)} />
               </label>
+              </center>
             </div>
 
             <div>
-              <label>tshirt tshirt:
+            <center>
+              <label>Tshirt tshirt:
                 <input type='' value={this.state.tshirt} onChange={this.handletshirtUpdate.bind(this)} />
               </label>
+              </center>
             </div>
 
             {/* <div>
@@ -80,11 +88,15 @@ class Addtshirt extends React.Component {
             </div> */}
 
             <div>
+            <center>
               <input type='submit' value='Add tshirt' />
+              </center>
             </div>
 
           </form>
+          <center>
           <Link to='/'>Back to All tshirts</Link>
+        </center>
         </div>
       );
     }
