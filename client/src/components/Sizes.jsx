@@ -6,9 +6,8 @@ import '../lib/sass/main.scss';
 import NavBar from './NavBar';
 import Header from './Header';
 import Slider from './Slider';
-import Footer from './Footer';
 
-class Tshirts extends React.Component {
+class Sizes extends React.Component {
 
   // #######################################################
   // # Local state
@@ -22,17 +21,17 @@ class Tshirts extends React.Component {
 
   render() {
 
-    if (!this.state.tshirts && this.state.tshirtsLoaded === true) {
+    if (!this.state.sizes && this.state.sizesLoaded === true) {
       return (
-        <p>Error loading tshirts. Try again later.</p>
+        <p>Error loading sizes. Try again later.</p>
       );
-    } else if (!this.state.tshirts) {
+    } else if (!this.state.sizes) {
       return (
-        <p>Loading tshirts...</p>
+        <p>Loading sizes...</p>
       );
-    } else if (this.state.tshirts.length === 0) {
+    } else if (this.state.sizes.length === 0) {
       return (
-        <p>Sorry, no tshirts are available</p>
+        <p>Sorry, no sizes are available</p>
       );
     } else {
       return (
@@ -57,12 +56,12 @@ A V-neck T-shirt has a V-shaped neckline, as opposed to the round neckline of th
           
           <h1>Brands</h1>
           <center>
-          {this.state.tshirts.map(tshirt => (
-              <li key={`tshirt_${tshirt._id}`}><Link to={`/tshirt/${tshirt._id}`}>{tshirt.title}</Link></li>
+          {this.state.sizes.map(size => (
+              <li key={`size_${size._id}`}><Link to={`/size/${size._id}`}>{size.title}</Link></li>
             ))}
           </center>
          
-          <center><p><Link to='/add-tshirt'>Add a new Tshirt</Link></p></center>
+          <center><p><Link to='/add-size'>Add a new Size</Link></p></center>
 
 
 
@@ -80,8 +79,6 @@ A V-neck T-shirt has a V-shaped neckline, as opposed to the round neckline of th
           
           </div>
 
-          <Footer></Footer> 
-
         </div>
 
       )
@@ -89,18 +86,18 @@ A V-neck T-shirt has a V-shaped neckline, as opposed to the round neckline of th
   }
 
   componentDidMount() {
-    fetch(urlToCurrentDomain(Config.tshirtsAPI))
+    fetch(urlToCurrentDomain(Config.sizesAPI))
       .then (res  => res.json())
       .then (json => {
-        this.setState({tshirts       : json});
-        this.setState({tshirtsLoaded : true});
+        this.setState({sizes       : json});
+        this.setState({sizesLoaded : true});
       })
       .catch(err => {
-        this.setState({tshirtsLoaded: true});
+        this.setState({sizesLoaded: true});
       });
   }
 
 }
 
-export default Tshirts;
+export default Sizes;
 

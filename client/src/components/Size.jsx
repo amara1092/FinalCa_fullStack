@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import Header from './Header';
 
 
-class Tshirt extends React.Component {
+class Size extends React.Component {
 
   // #######################################################
   // # Local state
@@ -20,28 +20,28 @@ class Tshirt extends React.Component {
 
   render() {
 
-    if (!this.state.tshirt && this.state.tshirtLoaded === true) {
+    if (!this.state.size && this.state.sizeLoaded === true) {
       return (
-        <p>Error loading tshirts. Try again later.</p>
+        <p>Error loading sizes. Try again later.</p>
       );
-    } else if (!this.state.tshirt) {
+    } else if (!this.state.size) {
       return (
-        <p>Loading tshirts...</p>
+        <p>Loading sizes...</p>
       );
-    } else if (this.state.tshirt.length === 0) {
+    } else if (this.state.size.length === 0) {
       return (
-        <p>Sorry, no tshirts are available</p>
+        <p>Sorry, no sizes are available</p>
       );
     } else {
       return (
         <div>
         <Header></Header>
         <NavBar></NavBar>
-          <h1>Brand:{this.state.tshirt.title}</h1>
-          <h1>Tshirt:{this.state.tshirt.tshirt}</h1>
-          <h1>Size:{this.state.tshirt.size}</h1>
-          <h1>Colour:{this.state.tshirt.colour}</h1>
-          <h1><img src={this.state.tshirt.image}></img></h1>
+          <h1>Brand:{this.state.size.title}</h1>
+          <h1>Size:{this.state.size.size}</h1>
+          <h1>Chest:{this.state.size.chest}</h1>
+          <h1>Back:{this.state.size.back}</h1>
+          <h1><img src={this.state.size.image}></img></h1>
 
 
 
